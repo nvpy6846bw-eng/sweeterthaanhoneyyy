@@ -1,162 +1,359 @@
-// =========================
-// SWEETER THAAN HONEYY
-// script.js
-// =========================
+/*================================
+ SWEETER THAN HONEYY
+ Website Interactions
+================================*/
 
-// Fade in sections when scrolling
+
+console.log("Sweeter Than Honeyy website loaded");
+
+
+
+/*================================
+SCROLL ANIMATION
+================================*/
+
+
 const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, {
-    threshold: 0.15
-});
 
-sections.forEach((section) => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(40px)";
-    section.style.transition = "all 0.8s ease";
-    observer.observe(section);
-});
+const observer = new IntersectionObserver((entries)=>{
 
-// =========================
-// Floating Hearts
-// =========================
 
-function createHeart() {
+entries.forEach(entry=>{
 
-    const heart = document.createElement("div");
-    heart.innerHTML = "💖";
 
-    heart.style.position = "fixed";
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.bottom = "-30px";
-    heart.style.fontSize = (18 + Math.random() * 22) + "px";
-    heart.style.pointerEvents = "none";
-    heart.style.zIndex = "9999";
-    heart.style.opacity = "0.8";
-    heart.style.transition = "transform 6s linear, opacity 6s linear";
+if(entry.isIntersecting){
 
-    document.body.appendChild(heart);
 
-    setTimeout(() => {
-        heart.style.transform =
-            `translateY(-${window.innerHeight + 200}px) rotate(${Math.random()*360}deg)`;
-        heart.style.opacity = "0";
-    }, 100);
+entry.target.classList.add("show");
 
-    setTimeout(() => {
-        heart.remove();
-    }, 6100);
+
 }
 
-setInterval(createHeart, 1200);
-
-// =========================
-// Active Navigation
-// =========================
-
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach((section) => {
-
-        const top = section.offsetTop - 150;
-
-        if (scrollY >= top) {
-            current = section.getAttribute("id");
-        }
-
-    });
-
-    navLinks.forEach((link) => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-
-    });
 
 });
 
-// =========================
-// Back To Top Button
-// =========================
 
-const topButton = document.createElement("button");
+},{
 
-topButton.innerHTML = "↑";
-
-topButton.id = "topBtn";
-
-document.body.appendChild(topButton);
-
-Object.assign(topButton.style, {
-    position: "fixed",
-    right: "20px",
-    bottom: "20px",
-    width: "50px",
-    height: "50px",
-    borderRadius: "50%",
-    border: "none",
-    background: "#ff4f9a",
-    color: "#fff",
-    fontSize: "22px",
-    cursor: "pointer",
-    display: "none",
-    boxShadow: "0 10px 20px rgba(0,0,0,.2)",
-    zIndex: "9999",
-    transition: ".3s"
-});
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 400) {
-        topButton.style.display = "block";
-    } else {
-        topButton.style.display = "none";
-    }
+threshold:.15
 
 });
 
-topButton.onclick = () => {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 
-};
+sections.forEach(section=>{
 
-// =========================
-// Gallery Hover Glow
-// =========================
 
-document.querySelectorAll(".gallery-item img").forEach((img) => {
+observer.observe(section);
 
-    img.addEventListener("mouseenter", () => {
-        img.style.filter = "brightness(1.05)";
-    });
-
-    img.addEventListener("mouseleave", () => {
-        img.style.filter = "brightness(1)";
-    });
 
 });
 
-// =========================
-// Console Message
-// =========================
 
-console.log("%c💖 Sweeter Thaan Honeyy Website Loaded!",
-"color:#ff4f9a;font-size:18px;font-weight:bold;");
+
+
+
+
+
+/*================================
+FAQ ACCORDION
+================================*/
+
+
+const faqButtons = document.querySelectorAll(".faqItem button");
+
+
+
+faqButtons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+const answer = button.nextElementSibling;
+
+const icon = button.querySelector("span");
+
+
+
+if(answer.style.maxHeight){
+
+
+answer.style.maxHeight = null;
+
+icon.textContent="+";
+
+
+}
+
+else{
+
+
+document.querySelectorAll(".answer").forEach(item=>{
+
+
+item.style.maxHeight=null;
+
+
+});
+
+
+
+document.querySelectorAll(".faqItem span").forEach(item=>{
+
+
+item.textContent="+";
+
+
+});
+
+
+
+answer.style.maxHeight = answer.scrollHeight + "px";
+
+
+icon.textContent="-";
+
+
+}
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+/*================================
+GALLERY IMAGE POPUP
+================================*/
+
+
+const images = document.querySelectorAll(".galleryItem img");
+
+
+
+images.forEach(image=>{
+
+
+image.addEventListener("click",()=>{
+
+
+const popup = document.createElement("div");
+
+
+popup.className="imagePopup";
+
+
+
+popup.innerHTML = `
+
+<img src="${image.src}">
+
+`;
+
+
+
+document.body.appendChild(popup);
+
+
+
+popup.addEventListener("click",()=>{
+
+
+popup.remove();
+
+
+});
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+
+/*================================
+POPUP STYLE
+================================*/
+
+
+const popupStyle = document.createElement("style");
+
+
+
+popupStyle.innerHTML = `
+
+
+.imagePopup{
+
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.75);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+padding:25px;
+
+cursor:pointer;
+
+}
+
+
+
+.imagePopup img{
+
+
+max-width:90%;
+
+
+max-height:90%;
+
+
+border-radius:30px;
+
+
+border:5px solid #ffd3e3;
+
+
+box-shadow:
+
+0 0 50px rgba(230,111,155,.7);
+
+
+}
+
+
+
+`;
+
+
+
+document.head.appendChild(popupStyle);
+
+
+
+
+
+
+
+/*================================
+NAVBAR SHADOW
+================================*/
+
+
+const nav = document.querySelector("nav");
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+if(window.scrollY > 40){
+
+
+nav.style.boxShadow =
+
+"0 10px 35px rgba(212,76,130,.2)";
+
+
+}
+
+else{
+
+
+nav.style.boxShadow="none";
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+/*================================
+BUTTON HOVER EFFECT
+================================*/
+
+
+const links = document.querySelectorAll("a");
+
+
+
+links.forEach(link=>{
+
+
+link.addEventListener("mouseenter",()=>{
+
+
+link.style.transform="translateY(-3px)";
+
+
+});
+
+
+
+link.addEventListener("mouseleave",()=>{
+
+
+link.style.transform="translateY(0)";
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+/*================================
+SMOOTH ORDER MESSAGE
+================================*/
+
+
+const orderButtons = document.querySelectorAll(".orderButton");
+
+
+orderButtons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+console.log("Customer is ordering Sweeter Than Honeyy treats");
+
+
+});
+
+
+});
