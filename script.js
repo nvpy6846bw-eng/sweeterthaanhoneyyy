@@ -1,1 +1,560 @@
+/* =========================
+   GOOGLE FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap');
+
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#fff5fa,#ffe4ef,#fff5fa);
+    color:#444;
+    overflow-x:hidden;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#ff4f9a;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.section-title h2{
+    font-size:2.8rem;
+    color:#ff2e84;
+    margin-top:10px;
+    font-family:'Pacifico',cursive;
+}
+
+.section-title p{
+    margin-top:12px;
+    color:#666;
+    font-size:1rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary,
+.btn-secondary{
+
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.btn-primary{
+
+    background:#ff4f9a;
+    color:#fff;
+    box-shadow:0 10px 25px rgba(255,79,154,.25);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+    background:#ff2e84;
+
+}
+
+.btn-secondary{
+
+    border:2px solid #ff4f9a;
+    color:#ff4f9a;
+    margin-left:15px;
+}
+
+.btn-secondary:hover{
+
+    background:#ff4f9a;
+    color:#fff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.hero-content{
+
+    flex:1;
+}
+
+.badge{
+
+    display:inline-block;
+    background:#ffd6ea;
+    color:#ff2e84;
+    padding:10px 22px;
+    border-radius:40px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-family:'Pacifico',cursive;
+    font-size:4.5rem;
+    color:#ff2e84;
+    margin-bottom:20px;
+}
+
+.subtitle{
+
+    font-size:1.2rem;
+    color:#666;
+    line-height:1.8;
+    max-width:600px;
+}
+
+.hero-buttons{
+
+    margin:35px 0;
+}
+
+.hero-info{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+.info-card{
+
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.info-card h3{
+
+    color:#ff2e84;
+    margin-bottom:10px;
+}
+
+.hero-image{
+
+    flex:1;
+    text-align:center;
+}
+
+.hero-image img{
+
+    width:100%;
+    max-width:520px;
+    border-radius:35px;
+    box-shadow:0 25px 50px rgba(255,79,154,.25);
+}
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about{
+    background:#fff;
+}
+
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 20px 45px rgba(255,79,154,.18);
+}
+
+.about-text h3{
+    font-size:2rem;
+    color:#ff2e84;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#666;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.about-features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:30px;
+}
+
+.feature{
+    background:#fff5fa;
+    padding:18px;
+    border-radius:18px;
+    font-weight:600;
+    color:#ff2e84;
+    box-shadow:0 8px 20px rgba(255,79,154,.08);
+    transition:.3s ease;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================
+   MENU SECTION
+========================= */
+
+.menu{
+    background:#fff5fa;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.menu-card{
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(255,79,154,.10);
+    transition:.3s ease;
+    border:2px solid transparent;
+}
+
+.menu-card:hover{
+    transform:translateY(-8px);
+    border-color:#ffb6d5;
+    box-shadow:0 20px 40px rgba(255,79,154,.18);
+}
+
+.menu-card h3{
+    color:#ff2e84;
+    margin-bottom:12px;
+    font-size:1.4rem;
+}
+
+.price{
+    display:inline-block;
+    margin:15px 0;
+    background:#ff4f9a;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:50px;
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+.menu-card p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* =========================
+   MENU CARD ANIMATION
+========================= */
+
+.menu-card,
+.feature,
+.info-card{
+    transition:all .3s ease;
+}
+
+.menu-card:hover,
+.feature:hover,
+.info-card:hover{
+    transform:translateY(-8px);
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery{
+    background:#ffffff;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(255,79,154,.12);
+}
+
+.gallery-item img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:.4s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+/* =========================
+   REVIEWS SECTION
+========================= */
+
+.reviews{
+    background:#fff5fa;
+}
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.review-card{
+    background:#fff;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(255,79,154,.10);
+    transition:.3s ease;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+}
+
+.stars{
+    font-size:1.5rem;
+    color:#ffc107;
+    margin-bottom:20px;
+}
+
+.review-card p{
+    line-height:1.8;
+    color:#666;
+    margin-bottom:20px;
+}
+
+.review-card h4{
+    color:#ff2e84;
+}
+
+.review-cta{
+    text-align:center;
+    margin-top:50px;
+}
+
+.review-cta h3{
+    color:#ff2e84;
+    margin-bottom:10px;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact{
+    background:#ffffff;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-bottom:50px;
+}
+
+.contact-card{
+    background:#fff5fa;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 12px 25px rgba(255,79,154,.08);
+    transition:.3s ease;
+}
+
+.contact-card:hover{
+    transform:translateY(-6px);
+}
+
+.contact-card h3{
+    color:#ff2e84;
+    margin-bottom:10px;
+}
+
+.contact-card a{
+    color:#444;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.contact-card a:hover{
+    color:#ff2e84;
+}
+
+.order-info{
+    background:#fff5fa;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    margin-bottom:40px;
+    line-height:2;
+}
+
+.order-info h3{
+    color:#ff2e84;
+    margin-bottom:15px;
+}
+
+.contact-buttons{
+    text-align:center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#ff4f9a;
+    color:#fff;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.footer h2{
+    font-family:'Pacifico',cursive;
+    font-size:2.3rem;
+    margin-bottom:10px;
+}
+
+.footer p{
+    margin:10px 0;
+}
+
+.footer-social{
+    margin:30px 0;
+}
+
+.footer-social a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    color:#ffe0ef;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero-info{
+        grid-template-columns:1fr;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+
+    .about-features{
+        grid-template-columns:1fr;
+    }
+
+    .btn-secondary{
+        margin-left:0;
+        margin-top:15px;
+    }
+
+    .hero-buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+}
+
+@media (max-width:600px){
+
+    section{
+        padding:70px 20px;
+    }
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .subtitle{
+        font-size:1rem;
+    }
+
+    .gallery-item img{
+        height:220px;
+    }
+
+}
+
+
+
+
 
